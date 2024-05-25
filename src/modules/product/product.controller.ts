@@ -8,7 +8,7 @@ import {
   Delete,
 } from '@nestjs/common';
 import { Product } from '@prisma/client';
-import { CreateProductDTO, UpdateProductDTO } from 'src/dtos/product.dto';
+import { CreateProductDTO, UpdateProductDTO } from '../../dtos/product.dto';
 import { ProductService } from './product.service';
 import { ApiTags } from '@nestjs/swagger';
 

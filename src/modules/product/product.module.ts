@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
-import { PrismaService } from 'src/database/prisma.service';
-import { PrismaProductsRepository } from 'src/repositories/prisma/prisma-products-repository';
-import { ProductRepository } from 'src/repositories/products-repository';
-import { ProductService } from './product.service';
+import { PrismaService } from '../../database/prisma.service';
+import { PrismaProductsRepository } from '../../repositories/prisma/prisma-products-repository';
+import { ProductRepository } from '../../repositories/prisma/products-repository';
 import { ProductController } from './product.controller';
+import { ProductService } from './product.service';
 
 @Module({
   imports: [],
