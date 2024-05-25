@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/database/prisma.service';
-import { CreateProductDTO, UpdateProductDTO } from 'src/dtos/product.dto';
+import { UpdateProductDTO } from 'src/dtos/product.dto';
 import { ProductRepository } from '../products-repository';
 import { Product } from '@prisma/client';
 
@@ -8,7 +8,7 @@ import { Product } from '@prisma/client';
 export class PrismaProductsRepository implements ProductRepository {
   constructor(private prisma: PrismaService) {}
 
-  async create(ProductInfo: CreateProductDTO): Promise<Product | null> {
+  async create(ProductInfo: any): Promise<Product | null> {
     const product = await this.prisma.product.create({
       data: ProductInfo,
     });

@@ -3,10 +3,11 @@ import { PrismaService } from 'src/database/prisma.service';
 import { PrismaProductsRepository } from 'src/repositories/prisma/prisma-products-repository';
 import { ProductRepository } from 'src/repositories/products-repository';
 import { ProductService } from './product.service';
+import { ProductController } from './product.controller';
 
 @Module({
   imports: [],
-  controllers: [],
+  controllers: [ProductController],
   providers: [
     PrismaService,
     ProductService,
@@ -16,4 +17,4 @@ import { ProductService } from './product.service';
     },
   ],
 })
-export class AppModule {}
+export class ProductModule {}

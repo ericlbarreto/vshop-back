@@ -36,8 +36,8 @@ export class ProductController {
     return this.productRepository.delete(id);
   }
 
-  @Get('all')
+  @Get()
   async readAll(): Promise<Product[]> {
-    return await this.productRepository.findAll();
+    return this.productRepository.findAll();
   }
 }
