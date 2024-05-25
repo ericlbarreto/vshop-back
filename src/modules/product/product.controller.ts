@@ -10,7 +10,9 @@ import {
 import { Product } from '@prisma/client';
 import { CreateProductDTO, UpdateProductDTO } from 'src/dtos/product.dto';
 import { ProductService } from './product.service';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('products')
 @Controller('products')
 export class ProductController {
   constructor(private productService: ProductService) {}
