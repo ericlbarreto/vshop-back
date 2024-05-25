@@ -11,4 +11,5 @@ export abstract class ProductRepository {
   abstract delete(id: string): Promise<Product | null>;
   abstract findByTitle(title: string): Promise<Product | null>;
   abstract findAll(): Promise<Product[]>;
+  abstract decreaseStock(id: string): Promise<Product | null>;
 }

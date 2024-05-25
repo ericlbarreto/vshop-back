@@ -54,4 +54,17 @@ export class PrismaProductsRepository implements ProductRepository {
 
     return products;
   }
+
+  async decreaseStock(id: string): Promise<Product | null> {
+    const product = await this.prisma.product.update({
+      where: { id },
+      data: {
+        stock: {
+          decrement: 1,
+        },
+      },
+    });
+
+    return product;
+  }
 }

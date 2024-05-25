@@ -9,35 +9,40 @@ import {
 } from '@nestjs/common';
 import { Product } from '@prisma/client';
 import { CreateProductDTO, UpdateProductDTO } from 'src/dtos/product.dto';
-import { ProductRepository } from 'src/repositories/products-repository';
+import { ProductService } from './product.service';
 
 @Controller('products')
 export class ProductController {
-  constructor(private productRepository: ProductRepository) {}
+  constructor(private productService: ProductService) {}
 
   @Post()
   async create(@Body() body: CreateProductDTO): Promise<Product> {
-    return await this.productRepository.create(body);
+    return await this.productService.create(body);
   }
 
   @Get(':id')
   async readOne(@Param('id') id: string): Promise<Product | null> {
-    const product = await this.productRepository.read(id);
+    const product = await this.productService.read(id);
     return product;
   }
 
   @Put(':id')
   async update(@Param('id') id: string, @Body() ProductInfo: UpdateProductDTO) {
-    return this.productRepository.update(id, ProductInfo);
+    return this.productService.update(id, ProductInfo);
   }
 
   @Delete(':id')
   async delete(@Param('id') id: string) {
-    return this.productRepository.delete(id);
+    return this.productService.delete(id);
   }
 
   @Get()
   async readAll(): Promise<Product[]> {
-    return this.productRepository.findAll();
+    return this.productService.findAll();
+  }
+
+  @Post(':id/decrease')
+  async decreaseStock(@Param('id') id: string): Promise<Product | null> {
+    return this.productService.decreaseStock(id);
   }
 }
