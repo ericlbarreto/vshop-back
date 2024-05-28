@@ -5,6 +5,9 @@
 # 💚 v(shop) API
 Bem-vindo à API da VShop, uma plataforma web que promove a experiência de e-commerce da VShop, especializada em produtos eletrônicos de última geração. Esta API oferece uma maneira fácil e conveniente de interagir com o catálogo de produtos, realizar compras e gerenciar a criação dos produtos.
 
+<img src="https://i.ibb.co/wsr1ppR/image.png" />
+
+#
 # 🏆 Challenges
 - Primeiro contato com o framework NestJS e alguns conceitos utilizados por ele.
 - Primeiro contato com o framework Jest para os testes unitários
